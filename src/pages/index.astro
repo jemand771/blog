@@ -1,0 +1,40 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import {SITE_TITLE, SITE_DESCRIPTION} from '../consts';
+import Sparkles from "../components/Sparkles.astro";
+
+const age = Math.abs(new Date(Date.now() - new Date("2001-02-20").getTime()).getUTCFullYear() - 1970)
+---
+
+<!doctype html>
+<html lang="en">
+<!--suppress HtmlRequiredTitleElement -->
+<head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION}/>
+</head>
+<body>
+<Header/>
+<main>
+    <h1>👋 Hi, I'm willy!</h1>
+    <p>
+        <i>oh look, a generic website with a waving hand emoji in the title. how original</i>
+    </p>
+    <p>
+        I'm a {age} year old software engineer from germany.
+        I'm into backend development, cloud infrastructure, and everything automation related.
+        You can find me as <i>@jemand771</i> in most places on the internet.
+    </p>
+    <p>
+        I currently work at <a href="https://intenta.de">Intenta</a> as a backend developer.
+        I spend most of my day writing Python and C++ with some build system and infrastructure adventures sprinkled in
+        here and there.
+        To balance out some of the low-level work there, I tinker with some more
+        <Sparkles>cloud-native</Sparkles>
+        technologies in my free time.
+    </p>
+</main>
+<Footer/>
+</body>
+</html>
